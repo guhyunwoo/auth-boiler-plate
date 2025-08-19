@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: jwt-boiler-plate
+
+  datasource:
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/${DB_NAME}?serverTimezone=UTC&characterEncoding=UTF-8
+
+
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: update
+
+jwt:
+  access-time: 3600 # 3600? = 1??
+  refresh-time: 604800 # 604800? = 7?
+  header: Authentication
+  prefix: Bearer
+  secret-key: ${JWT_SECRET_KEY}
